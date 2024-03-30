@@ -12,7 +12,7 @@ from enum import Enum
 from langchain.schema import (AIMessage, HumanMessage)
 from src.chatbot.conversation import Conversation
 from src.chatbot.prompt import Prompt
-from src.models.llama_model import LlamaModel
+# from src.models.llama_model import LlamaModel
 from src.models.chatgpt_model import ChatGPT35Model, ChatGPT40Model
 from src.scrapers.pdf_scraper import PDFScraper
 from src.db.qdrant_db import QdrantDatabase
