@@ -32,14 +32,15 @@ class ChatBOT:
     # By default, the ChatBOT uses the LLama 2 model and a temperature 0 that means answer more focused
     #  and choerent
     def __init__(self):
-        # self.model = LlamaModel(0.0)
+        self.model = ChatGPT35Model(0.0)
         self.conversation = Conversation()
         self.db = QdrantDatabase()
         self.prompt = Prompt()
 
     # The user can change the default model with others supportedd.
     def set_model(self, model_type, temperature):
-            # self.model = LlamaModel(temperature)
+        # if model_type == self.Model.LLAMA and not isinstance(self.model, LlamaModel):
+        #     self.model = LlamaModel(temperature)
         if model_type == self.Model.CHATGPT_3_5 and not isinstance(self.model, ChatGPT35Model):
             self.model = ChatGPT35Model(temperature)
         elif model_type == self.Model.CHATGPT_4 and not isinstance(self.model, ChatGPT40Model):
